@@ -123,11 +123,11 @@ async function createApp (appName, gitPath, verbose) {
   console.log(`Success! Created ${appName} at ${appPath}`)
   console.log('Inside that directory, you can run several commands:')
   console.log()
-  console.log(chalk.cyan(`  ${displayedCommand} start`))
-  console.log('    Starts the React + Express development servers.')
+  console.log(chalk.cyan(`  ${displayedCommand} dev`))
+  console.log('    Starts the App development servers.')
   console.log()
-  console.log(chalk.cyan(`  ${displayedCommandRun} deploy`))
-  console.log('    Containerizes and deploys the React + Express apps to Kubernetes.')
+  console.log(chalk.cyan(`  ${displayedCommandRun} build`))
+  console.log('    Containerizes and build the app.')
   console.log()
   console.log(chalk.cyan(`  ${displayedCommand} test`))
   console.log('    Starts the test runner.')
@@ -141,6 +141,9 @@ async function createApp (appName, gitPath, verbose) {
   console.log()
   console.log(chalk.cyan(`  cd ${appName}`))
   console.log(`  ${chalk.cyan(`${displayedCommand} start`)}`)
+
+  console.log()
+  console.log('check docs: https://g22h5luj8j.feishu.cn/wiki/QzpLwW2Gtint80kV3fjcneqLnWb')
   const readmeExists = false // TODO detect existing files / README
   if (readmeExists) {
     console.log()
