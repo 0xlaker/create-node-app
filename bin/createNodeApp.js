@@ -51,7 +51,7 @@ async function createApp (appName, gitPath, verbose) {
   const useYarn = await shouldUseYarn()
   const appPath = path.join(cwd, appName)
 
-  console.log('git地址：', gitPath)
+  console.log('git项目模版：', gitPath)
 
   // Create project directory
   try {
@@ -70,12 +70,12 @@ async function createApp (appName, gitPath, verbose) {
   }
 
   // Copy template files
-  const modules = ['React', 'Express']
-  console.log(
-    `\nCreating a new ${modules.map(module => chalk.cyan(module)).join(' + ')} app in ${chalk.green(
-      appPath
-    )}.\n`
-  )
+  // const modules = ['React', 'Express']
+  // console.log(
+  //   `\nCreating a new ${modules.map(module => chalk.cyan(module)).join(' + ')} app in ${chalk.green(
+  //     appPath
+  //   )}.\n`
+  // )
   fs.rmSync(templatePath, { recursive: true })
   fs.mkdirSync(templatePath)
   await execSync(`git clone ${gitPath} ${templatePath}`, {
